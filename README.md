@@ -1,3 +1,13 @@
 # Setup
 
-1. Clone the code onto your local machine
+1. Clone this repository onto your local machine by running 
+
+`git clone https://github.com/BrownSpaceEngineering/pvdx-mobile-app.git`
+
+2. Install dependencies 
+
+`yarn install`
+
+3. Start the expo server 
+
+`expo start`
