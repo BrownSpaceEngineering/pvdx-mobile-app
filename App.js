@@ -7,6 +7,7 @@ export default function App() {
     <View style={styles.container}>
       <Text>Hello PVDX!</Text>
       <StatusBar style="auto" />
+      <Text>Hello I'm Bowen</Text>
     </View>
   );
 }
