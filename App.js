@@ -1,18 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
-import { Alert, TouchableOpacity, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
+import HomeScreen from './screens/HomeScreen';
+import AboutUsScreen from './screens/AboutUsScreen';
+
+const Tab = createBottomTabNavigator();
 
 export default function App() {
 
   return (
-    <View style={styles.container}>
-      <Text>Hello PVDX!</Text>
-      <StatusBar style="auto" />
-      <Text>Hello I'm Bowen</Text>
-      <TouchableOpacity style={styles.button} onPress={() => Alert.alert("I have been clicked o___0")} >
-        <Text>Click me!</Text>
-      </TouchableOpacity>
-    </View>
+    <NavigationContainer>
+      <Tab.Navigator>
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Settings" component={AboutUsScreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 }
 
@@ -22,13 +25,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  button: {
-    backgroundColor: "#aaa",
-    margin: 10,
-    padding: 5,
-    borderRadius: 5,
-    borderWidth: 1,
-    borderColor: "black",
   }
 });

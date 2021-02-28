@@ -6,7 +6,7 @@
 
 2. Install dependencies 
 
-`yarn install`
+`npm install`
 
 3. Start the expo server 
 
