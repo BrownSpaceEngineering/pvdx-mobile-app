@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { SafeAreaView, StyleSheet } from 'react-native';
+import { Button, SafeAreaView, StyleSheet } from 'react-native';
 import { Text, View } from 'react-native';
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>
@@ -13,7 +13,14 @@ const HomeScreen = () => {
         <View style={styles.title}> 
           <Text>hello</Text>
         </View> 
-      </View> 
+      </View>
+
+      <View style={styles.articleContainer}>
+        <Text style={styles.text}>
+          PVDX
+        </Text>
+        <Button title={'PVDX'} onPress = {() => navigation.navigate('PVDX')}/>
+      </View>
     </View>
   );
 }
