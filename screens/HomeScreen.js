@@ -1,11 +1,20 @@
 import * as React from 'react';
-import { Button, SafeAreaView, StyleSheet, Image } from 'react-native';
+import { Button, StyleSheet, Image, Pressable } from 'react-native';
 import { Text, View } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const HomeScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>
+      <Text style={styles.header}>
+        Projects
+      </Text>
+      <TouchableOpacity style={styles.articleContainer} onPress = {() => navigation.navigate('PVDX')}>
+        <Text style={styles.title}>
+          PVDX (click to pvdx pagee)
+        </Text>
+      </TouchableOpacity>
+      <Text style={styles.header}>
         Space News 
       </Text>
       <View style={styles.articleContainer}>
@@ -24,13 +33,6 @@ const HomeScreen = ({navigation}) => {
           />
         </View>
       </View>
-
-      <View style={styles.articleContainer}>
-        <Text style={styles.text}>
-          PVDX
-        </Text>
-        <Button title={'PVDX'} onPress = {() => navigation.navigate('PVDX')}/>
-      </View>
     </View>
   );
 }
@@ -38,14 +40,13 @@ const HomeScreen = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     paddingLeft: 10,
-    paddingTop: 50,
     flex: 1, 
     margin: 35,
   },
-  text: { 
+  header: { 
     fontSize: 24, 
     fontWeight: "bold",
-    marginBottom: 10,
+    marginVertical: 10,
   },
   articleContainer: {
     display: 'flex',

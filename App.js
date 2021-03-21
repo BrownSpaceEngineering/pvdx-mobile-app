@@ -14,9 +14,9 @@ const Home = () => {
   return (
     <Stack.Navigator
       initialRouteName="Home"
-      screenOptions={{
-        header: () => null,
-      }}
+      // screenOptions={{
+      //   header: () => null,
+      // }}
     >
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="PVDX" component={PVDXScreen} />
@@ -29,7 +29,7 @@ export default function App() {
     <NavigationContainer>
       <Tab.Navigator>
         <Tab.Screen name="Home" component={Home} />
-        <Tab.Screen name="Settings" component={AboutUsScreen} />
+        <Tab.Screen name="About" component={AboutUsScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
