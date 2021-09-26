@@ -11,3 +11,6 @@
 3. Start the expo server 
 
 `expo start`
+
+# Useful links
+Figma: https://www.figma.com/file/YGoR1LDeymuEoABARLugR7/BSE-Mobile-App?node-id=94%3A41
