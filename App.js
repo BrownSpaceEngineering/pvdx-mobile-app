@@ -14,12 +14,13 @@ const Home = () => {
   return (
     <Stack.Navigator
       initialRouteName="Home"
-      // screenOptions={{
-      //   header: () => null,
-      // }}
+      screenOptions={{
+        headerStyle: { elevation: 0 },
+        cardStyle: { backgroundColor: '#18181A' }
+      }}
     >
       <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="PVDX" component={PVDXScreen} />
+      {/* {// <Stack.Screen name="Data" component={DataScreen} /> */}
     </Stack.Navigator>
   );
 };
@@ -34,12 +35,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
