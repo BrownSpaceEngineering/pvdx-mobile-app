@@ -1,50 +1,61 @@
-import * as React from 'react';
-import { Button, StyleSheet, Image, Pressable } from 'react-native';
-import { Text, View } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import { NewsArticle } from '../components/NewsArticle';
+import * as React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { isRequired } from "react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType";
+import { Card } from "../components/Card";
 
-const HomeScreen = ({navigation}) => {
-  const articleList = ['PVDX launched!', 'Elon Musk visited BSE!', 'Christmas Party! Bring your dance shoes!'];
-
-  const renderArticle = () => {
-    return articleList.map(item => {
-      return <NewsArticle title={item} style={styles.article}/>
-    })
-  };
-
+const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>
-        Projects
-      </Text>
-      <TouchableOpacity style={styles.articleContainer} onPress = {() => navigation.navigate('PVDX')}>
-        <Text style={styles.title}>
-          PVDX (click to pvdx pagee)
-        </Text>
-      </TouchableOpacity>
-      <Text style={styles.header}>
-        Space News 
-      </Text>
-      {renderArticle()}
+      <Card
+        title="Gallery"
+        background={require("../assets/pvdx1.png")}
+        // onPress={() => navigation.navigate("Gallery")}
+      />
+      <Card
+        title="Data"
+        height={250}
+        // onPress={() => navigation.navigate("Data")}
+      >
+        <Text style={styles.data}>TBD</Text>
+      </Card>
+      <View style={styles.rowContainer}>
+        <Card
+          title="Map"
+          height={180}
+          width={180}
+          // onPress={() => navigation.navigate("Map")}
+          background={require("../assets/pvdx1.png")}
+        ></Card>
+        <Card
+          title="CAD"
+          height={180}
+          width={180}
+          background={require("../assets/pvdx1.png")}
+        ></Card>
+      </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
-    paddingLeft: 10,
-    flex: 1, 
-    margin: 35,
+    paddingTop: 4,
+    flex: 1,
+    margin: 8,
   },
-  header: { 
-    fontSize: 24, 
-    fontWeight: "bold",
-    marginVertical: 10,
+  rowContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
-  article: {
-    marginBottom: 10,
+  title: {
+    fontSize: 24,
   },
-})
+  data: {
+    paddingTop: 10,
+    fontSize: 16,
+    color: "#E4E5EA",
+  },
+});
 
 export default HomeScreen;
