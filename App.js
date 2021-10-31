@@ -16,7 +16,7 @@ const Home = () => {
       initialRouteName="Home"
       // screenOptions={{
       //   header: () => null,
-      // }}
+      // }}npm start
     >
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="PVDX" component={PVDXScreen} />
