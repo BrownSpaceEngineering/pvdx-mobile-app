@@ -5,7 +5,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { Text, View, Image, StyleSheet } from "react-native";
 import HomeScreen from "./screens/HomeScreen";
 import EngageScreen from "./screens/EngageScreen";
-import PVDXScreen from "./screens/PVDXScreen";
+import DataScreen from "./screens/DataScreen";
+import CADScreen from "./screens/CADScreen";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -15,12 +16,20 @@ const Home = () => {
     <Stack.Navigator
       initialRouteName="Home"
       screenOptions={{
-        headerStyle: { elevation: 0 },
+        headerStyle: {
+          elevation: 0,
+          backgroundColor: "#303030",
+        },
+        headerTitleStyle: {
+          color: "#E4E5EA",
+        },
         cardStyle: { backgroundColor: "#18181A" },
       }}
     >
       <Stack.Screen name="Home" component={HomeScreen} />
-      {/* {// <Stack.Screen name="Data" component={DataScreen} /> */}
+      <Stack.Screen name="Engage" component={EngageScreen} />
+      <Stack.Screen name="CADScreen" component={CADScreen} />
+      <Stack.Screen name="Data" component={DataScreen} />
     </Stack.Navigator>
   );
 };

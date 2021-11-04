@@ -15,7 +15,7 @@ const HomeScreen = ({ navigation }) => {
       <Card
         title="Data"
         height={250}
-        // onPress={() => navigation.navigate("Data")}
+        onPress={() => navigation.navigate("Data")}
       >
         <Text style={styles.data}>TBD</Text>
       </Card>
@@ -32,6 +32,7 @@ const HomeScreen = ({ navigation }) => {
           height={180}
           width={180}
           background={require("../assets/pvdx1.png")}
+          onPress={() => navigation.navigate("CADScreen")}
         ></Card>
       </View>
     </View>
