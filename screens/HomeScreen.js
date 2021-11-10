@@ -1,39 +1,37 @@
 import * as React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
-import { isRequired } from "react-native/Libraries/DeprecatedPropTypes/DeprecatedColorPropType";
-import { Card } from "../components/Card";
+import { NavCard } from "../components/NavCard";
 
 const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Card
+      <NavCard
         title="Gallery"
         background={require("../assets/pvdx1.png")}
         // onPress={() => navigation.navigate("Gallery")}
       />
-      <Card
+      <NavCard
         title="Data"
         height={250}
         onPress={() => navigation.navigate("Data")}
       >
         <Text style={styles.data}>TBD</Text>
-      </Card>
+      </NavCard>
       <View style={styles.rowContainer}>
-        <Card
+        <NavCard
           title="Map"
           height={180}
           width={180}
           // onPress={() => navigation.navigate("Map")}
           background={require("../assets/pvdx1.png")}
-        ></Card>
-        <Card
+        ></NavCard>
+        <NavCard
           title="CAD"
           height={180}
           width={180}
           background={require("../assets/pvdx1.png")}
           onPress={() => navigation.navigate("CADScreen")}
-        ></Card>
+        ></NavCard>
       </View>
     </View>
   );
