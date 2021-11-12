@@ -7,16 +7,10 @@ export const Card = ({ children = null }) => {
 
 const styles = StyleSheet.create({
   card: {
+    flexGrow: 1,
+    margin: "2%",
     padding: 15,
     borderRadius: 15,
     backgroundColor: "#333436",
-    shadowColor: "#000000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.7,
-    shadowRadius: 4,
-  },
-  body: {
-    fontSize: 16,
-    color: "#E4E5EA",
   },
 });

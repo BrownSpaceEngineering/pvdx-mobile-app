@@ -8,27 +8,25 @@ const HomeScreen = ({ navigation }) => {
       <NavCard
         title="Gallery"
         background={require("../assets/pvdx1.png")}
-        // onPress={() => navigation.navigate("Gallery")}
+        onPress={() => navigation.navigate("Gallery")}
       />
       <NavCard
         title="Data"
         height={250}
         onPress={() => navigation.navigate("Data")}
       >
-        <Text style={styles.data}>TBD</Text>
+        <Text style={styles.body}>TBD</Text>
       </NavCard>
       <View style={styles.rowContainer}>
         <NavCard
           title="Map"
           height={180}
-          width={180}
-          // onPress={() => navigation.navigate("Map")}
+          onPress={() => navigation.navigate("Map")}
           background={require("../assets/pvdx1.png")}
         ></NavCard>
         <NavCard
           title="CAD"
           height={180}
-          width={180}
           background={require("../assets/pvdx1.png")}
           onPress={() => navigation.navigate("CADScreen")}
         ></NavCard>
@@ -39,18 +37,15 @@ const HomeScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 4,
+    paddingTop: 10,
+    padding: 4,
     flex: 1,
-    margin: 8,
   },
   rowContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
   },
-  title: {
-    fontSize: 24,
-  },
-  data: {
+  body: {
     paddingTop: 10,
     fontSize: 16,
     color: "#E4E5EA",

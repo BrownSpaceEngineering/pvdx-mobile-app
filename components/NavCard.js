@@ -5,67 +5,76 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 export const NavCard = ({
   title,
   height = 200,
-  width = "100%",
   onPress = null,
   children = null,
   background = null,
 }) => {
   return (
-    <TouchableOpacity onPress={onPress} style={{ margin: 6, flexGrow: 1 }}>
-      <ImageBackground
+    <TouchableOpacity
+      onPress={onPress}
+      style={[
+        { height: height },
+        background ? styles.cardImage : styles.noImage,
+      ]}
+    >
+      {/* <View
+      style={[
+        { height: height },
+        background ? styles.cardImage : styles.noImage,
+      ]}
+    > */}
+      <Image
         source={background}
-        style={{ resizeMode: "cover" }}
-        imageStyle={{ height: height, width: width, borderRadius: 15 }}
+        resizeMode="cover"
+        style={{
+          height: height,
+          width: "100%",
+          borderRadius: 15,
+          position: "absolute",
+          top: 0,
+          right: 0,
+        }}
       />
-      <View
-        style={[
-          styles.card,
-          { height: height, width: width },
-          background ? styles.card : styles.noImage,
-        ]}
-      >
-        {/* Conditional that includes background color when there is no image */}
-        <View style={styles.headerContainer}>
-          <Text style={styles.title}>{title}</Text>
-          <Image
-            style={styles.arrow}
-            source={require("../assets/arrow-right.png")}
-          />
-        </View>
+      <View style={{ padding: 15 }}>
+        <Text style={styles.title}>{title}</Text>
+        <Image
+          style={styles.arrow}
+          source={require("../assets/arrow-right.png")}
+        />
         {children}
       </View>
+      {/* </View> */}
     </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
-  card: {
+  cardImage: {
     flexGrow: 1,
-    padding: 15,
+    margin: "2%",
     borderRadius: 15,
-    shadowColor: "#000000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.7,
-    shadowRadius: 4,
   },
   noImage: {
+    flexGrow: 1,
+    margin: "2%",
+    borderRadius: 15,
     backgroundColor: "#333436",
-  },
-  headerContainer: {
-    display: "flex",
-    flexDirection: "row",
   },
   title: {
     fontSize: 24,
     color: "#E4E5EA",
     fontWeight: "bold",
+    shadowColor: "#000000",
+    shadowOffset: { width: 2, height: 2 },
+    shadowOpacity: 1,
+    shadowRadius: 4,
   },
   arrow: {
     width: 15,
     height: 15,
     resizeMode: "contain",
     position: "absolute",
-    top: 7.5,
-    right: 0,
+    top: 22,
+    right: 20,
   },
 });
