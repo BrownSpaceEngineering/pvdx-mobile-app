@@ -22,6 +22,7 @@ const Home = () => {
         headerTitleStyle: {
           color: "#E4E5EA",
           fontWeight: "bold",
+          fontSize: 18,
         },
         cardStyle: { backgroundColor: "#18181A" },
       }}
@@ -55,6 +56,7 @@ const Engage = () => {
         headerTitleStyle: {
           color: "#E4E5EA",
           fontWeight: "bold",
+          fontSize: 18,
         },
         cardStyle: { backgroundColor: "#18181A" },
       }}
@@ -78,6 +80,7 @@ const Submit = () => {
         headerTitleStyle: {
           color: "#E4E5EA",
           fontWeight: "bold",
+          fontSize: 18,
         },
         cardStyle: { backgroundColor: "#18181A" },
       }}

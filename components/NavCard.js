@@ -1,28 +1,21 @@
 import * as React from "react";
-import { Text, View, Image, StyleSheet, ImageBackground } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { Text, View, Image, StyleSheet, TouchableOpacity } from "react-native";
 
 export const NavCard = ({
-  title,
-  height = 200,
+  height = "100%",
+  width = "96%",
   onPress = null,
-  children = null,
   background = null,
+  children = null,
 }) => {
   return (
     <TouchableOpacity
       onPress={onPress}
       style={[
-        { height: height },
+        { height: height, width: width },
         background ? styles.cardImage : styles.noImage,
       ]}
     >
-      {/* <View
-      style={[
-        { height: height },
-        background ? styles.cardImage : styles.noImage,
-      ]}
-    > */}
       <Image
         source={background}
         resizeMode="cover"
@@ -36,14 +29,12 @@ export const NavCard = ({
         }}
       />
       <View style={{ padding: 15 }}>
-        <Text style={styles.title}>{title}</Text>
+        {children}
         <Image
           style={styles.arrow}
           source={require("../assets/arrow-right.png")}
         />
-        {children}
       </View>
-      {/* </View> */}
     </TouchableOpacity>
   );
 };
@@ -59,15 +50,6 @@ const styles = StyleSheet.create({
     margin: "2%",
     borderRadius: 15,
     backgroundColor: "#333436",
-  },
-  title: {
-    fontSize: 24,
-    color: "#E4E5EA",
-    fontWeight: "bold",
-    shadowColor: "#000000",
-    shadowOffset: { width: 2, height: 2 },
-    shadowOpacity: 1,
-    shadowRadius: 4,
   },
   arrow: {
     width: 15,

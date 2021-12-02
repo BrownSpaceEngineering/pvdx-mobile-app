@@ -33,52 +33,44 @@ const EngageScreen = ({ navigation }) => {
         }
       />
       <View style={styles.rowContainer}>
-        <Card
-          children={
-            <View>
-              <Image
-                style={styles.icon}
-                source={require("../assets/bse_logo_white.png")}
-              />
-              <Text style={styles.label}>Outreach</Text>
-            </View>
-          }
-        />
-        <Card
-          children={
-            <View>
-              <Image
-                style={styles.icon}
-                source={require("../assets/bse_logo_white.png")}
-              />
-              <Text style={styles.label}>R&D</Text>
-            </View>
-          }
-        />
+        <NavCard height={"86%"} width={"46%"}>
+          <View style={styles.innerCard}>
+            <Image
+              style={styles.icon}
+              source={require("../assets/bse_logo_white.png")}
+            />
+            <Text style={styles.label}>Outreach</Text>
+          </View>
+        </NavCard>
+        <NavCard height={"86%"} width={"46%"}>
+          <View style={styles.innerCard}>
+            <Image
+              style={styles.icon}
+              source={require("../assets/bse_logo_white.png")}
+            />
+            <Text style={styles.label}>R&D</Text>
+          </View>
+        </NavCard>
       </View>
       <View style={styles.rowContainer}>
-        <Card
-          children={
-            <View>
-              <Image
-                style={styles.icon}
-                source={require("../assets/bse_logo_white.png")}
-              />
-              <Text style={styles.label}>Outreach</Text>
-            </View>
-          }
-        />
-        <NavCard
-          children={
-            <View>
-              <Image
-                style={styles.icon}
-                source={require("../assets/bse_logo_white.png")}
-              />
-              <Text style={styles.label}>About Us</Text>
-            </View>
-          }
-        />
+        <NavCard height={"86%"} width={"46%"}>
+          <View style={styles.innerCard}>
+            <Image
+              style={styles.icon}
+              source={require("../assets/bse_logo_white.png")}
+            />
+            <Text style={styles.label}>Equisat</Text>
+          </View>
+        </NavCard>
+        <NavCard height={"86%"} width={"46%"}>
+          <View style={styles.innerCard}>
+            <Image
+              style={styles.icon}
+              source={require("../assets/bse_logo_white.png")}
+            />
+            <Text style={styles.label}>About Us</Text>
+          </View>
+        </NavCard>
       </View>
     </View>
   );
@@ -105,22 +97,24 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 4,
   },
+  innerCard: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
   label: {
+    paddingTop: 8,
     fontSize: 18,
     color: "#E4E5EA",
     fontWeight: "bold",
-    textAlign: "center",
   },
   rowContainer: {
-    display: "flex",
     flexDirection: "row",
-    justifyContent: "space-between",
   },
   icon: {
-    height: 35,
-    width: 35,
+    margin: "1%",
+    height: 50,
+    width: 50,
     resizeMode: "contain",
-    alignSelf: "center",
   },
 });
 
