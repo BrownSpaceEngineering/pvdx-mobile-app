@@ -40,8 +40,7 @@ const HomeScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 10,
-    padding: 4,
+    margin: "2%",
     flex: 1,
   },
   rowContainer: {

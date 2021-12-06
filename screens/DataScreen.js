@@ -1,11 +1,17 @@
 import * as React from "react";
-import { Text, Image, StyleSheet } from "react-native";
-import { View } from "react-native";
+import {
+  Text,
+  Image,
+  StyleSheet,
+  SafeAreaView,
+  ScrollView,
+  View,
+} from "react-native";
 import { Card } from "../components/Card";
 
 const DataScreen = () => {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Card
         children={
           <Text style={styles.body}>
@@ -14,64 +20,53 @@ const DataScreen = () => {
           </Text>
         }
       />
-      <View style={styles.columnsContainer}>
-        <View style={styles.column}>
-          <Card
-            children={
-              <View>
-                <Text style={styles.body}>Solar Panel Info</Text>
-                <Image
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    resizeMode: "contain",
-                  }}
-                  source={require("../assets/bse_logo_white.png")}
-                />
-              </View>
-            }
-          />
-        </View>
-        <View style={styles.column}>
-          <Card
-            children={
-              <View>
-                <Text style={styles.body}>Battery Info</Text>
-                <Image
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    resizeMode: "contain",
-                  }}
-                  source={require("../assets/bse_logo_white.png")}
-                />
-              </View>
-            }
-          />
-        </View>
+      <View style={styles.rowContainer}>
+        <Card
+          width="46%"
+          children={
+            <View>
+              <Text style={styles.body}>Solar Panel Info</Text>
+            </View>
+          }
+        />
+        <Card
+          width="46%"
+          children={
+            <View>
+              <Text style={styles.body}>Battery Info</Text>
+              <Text style={styles.body}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </Text>
+            </View>
+          }
+        />
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    margin: 15,
+    margin: "2%",
   },
-  columnsContainer: {
-    display: "flex",
+  rowContainer: {
+    flex: 1,
     flexDirection: "row",
-    height: "40%",
     justifyContent: "space-between",
-    paddingTop: 15,
   },
   column: {
-    height: "100%",
+    flex: 1,
     width: "48%",
   },
   body: {
     fontSize: 16,
+    padding: 4,
     color: "#E4E5EA",
   },
 });

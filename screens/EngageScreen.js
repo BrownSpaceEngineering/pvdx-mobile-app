@@ -3,6 +3,7 @@ import { StyleSheet } from "react-native";
 import { Text, Image, View } from "react-native";
 import { Card } from "../components/Card";
 import { NavCard } from "../components/NavCard";
+import { Social } from "../components/Social";
 
 const EngageScreen = ({ navigation }) => {
   return (
@@ -62,7 +63,11 @@ const EngageScreen = ({ navigation }) => {
             <Text style={styles.label}>Equisat</Text>
           </View>
         </NavCard>
-        <NavCard height={"86%"} width={"46%"}>
+        <NavCard
+          height={"86%"}
+          width={"46%"}
+          // onPress={() => }
+        >
           <View style={styles.innerCard}>
             <Image
               style={styles.icon}
@@ -72,14 +77,14 @@ const EngageScreen = ({ navigation }) => {
           </View>
         </NavCard>
       </View>
+      <Social />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 10,
-    padding: 4,
+    margin: "2%",
     flex: 1,
   },
   body: {
