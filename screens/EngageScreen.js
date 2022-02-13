@@ -66,7 +66,7 @@ const EngageScreen = ({ navigation }) => {
         <NavCard
           height={"86%"}
           width={"46%"}
-          // onPress={() => }
+          onPress={() => navigation.navigate("AboutUs")}
         >
           <View style={styles.innerCard}>
             <Image

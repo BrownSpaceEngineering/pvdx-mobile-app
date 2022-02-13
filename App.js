@@ -8,6 +8,7 @@ import EngageScreen from "./screens/EngageScreen";
 import SubmitScreen from "./screens/SubmitScreen";
 import DataScreen from "./screens/DataScreen";
 import CADScreen from "./screens/CADScreen";
+import AboutUs from "./screens/AboutUs";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -65,6 +66,11 @@ const Engage = () => {
         name="Engage"
         component={EngageScreen}
         options={{ title: "Engage" }}
+      />
+      <Stack.Screen
+        name="AboutUs"
+        component={AboutUs}
+        options={{ title: "AboutUs" }}
       />
     </Stack.Navigator>
   );
