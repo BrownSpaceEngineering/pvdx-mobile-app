@@ -579,12 +579,12 @@ export default class TrackFragment extends React.Component {
     axios
       .get(
         trackServerPrefix +
-          "register/" +
-          phoneNumber +
-          "," +
-          _this.state.notifyLat +
-          "," +
-          _this.state.notifyLon
+        "register/" +
+        phoneNumber +
+        "," +
+        _this.state.notifyLat +
+        "," +
+        _this.state.notifyLon
       )
       .then(function (result) {
         _this.setState({
@@ -622,14 +622,14 @@ export default class TrackFragment extends React.Component {
           Alert.alert(
             "Change Location?",
             "Do you want to overwrite your previous location (" +
-              result.data.lat +
-              ", " +
-              result.data.lon +
-              ") and get updates for (" +
-              _this.state.notifyLat +
-              ", " +
-              _this.state.notifyLon +
-              ") instead?",
+            result.data.lat +
+            ", " +
+            result.data.lon +
+            ") and get updates for (" +
+            _this.state.notifyLat +
+            ", " +
+            _this.state.notifyLon +
+            ") instead?",
             [
               { text: "No" },
               { text: "Yes", onPress: () => _this.registerNumber(phoneNumber) },
@@ -804,7 +804,7 @@ export default class TrackFragment extends React.Component {
             image={isAndroid ? satMarkerImage_android : null}
             opacity={
               this.state.satCoord.latitude != 0 ||
-              this.state.satCoord.latitude != 0
+                this.state.satCoord.latitude != 0
                 ? 1.0
                 : 0
             }

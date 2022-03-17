@@ -5,21 +5,88 @@ import {
   StyleSheet,
   ScrollView,
   FlatList,
-  View,
+  View
 } from "react-native";
 import { Card } from "../components/Card";
+import { Social } from "../components/Social";
+import { NavCard } from "../components/NavCard";
+
+
 
 const AboutUs = () => {
   return (
     <ScrollView style={styles.container}>
+      {/* <View style={styles.container}> */}
       <Card
         children={
-          <Text style={styles.body}>
-            Last transmission{"\n"}8 months ago{"\n"}
-            Current State: LOW POWER
-          </Text>
+          <View style={{ margin: 6 }}>
+            <Text style={styles.title}>Who we are</Text>
+            <Text style={styles.body}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+              do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </Text>
+          </View>
         }
       />
+      <Card
+        children={
+          <>
+            <Text style={styles.title}>What we do</Text>
+            <Text style={styles.body}>
+              <Text fontSize='sm'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna aliqua. </Text>
+            </Text>
+          </>
+        }
+      />
+      <Card
+        children={
+          <>
+            <Text style={styles.title}>Something other title text</Text>
+            <Text style={styles.body}>
+              <Text fontSize='sm'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna aliqua. </Text>
+            </Text>
+          </>
+        }
+      />
+      <Card
+        children={
+          <>
+            <Text style={styles.title}>News</Text>
+            <View style={styles.container}>
+              <Text style={styles.boxOne}>
+                <Text style={styles.blackBox}>       </Text>
+                Follow @BSE
+              </Text>
+            </View>
+          </>
+        }
+      />
+      <Card
+        children={
+          <>
+            <Text style={styles.bodyBig}>Twitter Feed</Text>
+            <View style={styles.container}></View>
+          </>
+        }
+      />
+      <Card
+        children={
+          <>
+            <Circle />
+          </>
+        }
+      />
+      <NavCard height={"86%"} width={"46%"}>
+        <View style={styles.innerCard}>
+          <Image
+            style={styles.icon}
+            source={require("../assets/bse_logo_white.png")}
+          />
+          <Text style={styles.label}>R&D</Text>
+        </View>
+      </NavCard>
     </ScrollView>
   );
 };
@@ -27,6 +94,8 @@ const AboutUs = () => {
 const styles = StyleSheet.create({
   container: {
     margin: "2%",
+    flex: 1,
+    flexDirection: 'row'
   },
   column: {
     flex: 1,
@@ -36,6 +105,40 @@ const styles = StyleSheet.create({
     fontSize: 16,
     padding: 4,
     color: "#E4E5EA",
+  },
+  bodyBig: {
+    fontSize: 36,
+    padding: 55,
+    color: "#E4E5EA",
+  },
+  boxOne: {
+    flex: 1,
+    flexDirection: 'row',
+    backgroundColor: '#1DA1F2',
+    width: '60%',
+    padding: 10,
+  },
+  blackBox: {
+    flex: 1,
+    flexDirection: 'row',
+    backgroundColor: 'white',
+    width: '5%',
+  },
+  bigBox: {
+    flex: 1,
+    margin: '2%',
+    width: '40%',
+    height: '70%'
+
+  },
+  title: {
+    fontSize: 18,
+    color: "#E4E5EA",
+    fontWeight: "bold",
+    shadowColor: "#000000",
+    shadowOffset: { width: 2, height: 2 },
+    shadowOpacity: 1,
+    shadowRadius: 4,
   },
 });
 

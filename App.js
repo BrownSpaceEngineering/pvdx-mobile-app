@@ -9,6 +9,7 @@ import SubmitScreen from "./screens/SubmitScreen";
 import DataScreen from "./screens/DataScreen";
 import CADScreen from "./screens/CADScreen";
 import AboutUs from "./screens/AboutUs";
+// import Bootstrap from "bootstrap";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
