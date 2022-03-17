@@ -5,36 +5,22 @@ import {
   StyleSheet,
   ScrollView,
   FlatList,
-  View
+  View,
 } from "react-native";
 import { Card } from "../components/Card";
 import { Social } from "../components/Social";
 import { NavCard } from "../components/NavCard";
 
-
-
 const AboutUs = () => {
   return (
     <ScrollView style={styles.container}>
-      {/* <View style={styles.container}> */}
-      <Card
-        children={
-          <View style={{ margin: 6 }}>
-            <Text style={styles.title}>Who we are</Text>
-            <Text style={styles.body}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-              do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </Text>
-          </View>
-        }
-      />
       <Card
         children={
           <>
-            <Text style={styles.title}>What we do</Text>
+            <Text style={styles.title}>Who we are</Text>
             <Text style={styles.body}>
-              <Text fontSize='sm'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                do eiusmod tempor incididunt ut labore et dolore magna aliqua. </Text>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </Text>
           </>
         }
@@ -42,10 +28,35 @@ const AboutUs = () => {
       <Card
         children={
           <>
+            <Text style={styles.title}>What we do</Text>
+            <Text style={styles.body}>
+              <Text fontSize="sm">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
+              </Text>
+            </Text>
+          </>
+        }
+      />
+      <ScrollView style={styles.rowContainer} horizontal={true}>
+        <View style={styles.smallCard}>
+          <Text style={styles.title}>Avionics</Text>
+          <Text style={styles.body}>We do avionics stuff</Text>
+        </View>
+        <View style={styles.smallCard}>
+          <Text style={styles.title}>Flight Software</Text>
+          <Text style={styles.body}>We do flight software stuff</Text>
+        </View>
+      </ScrollView>
+      <Card
+        children={
+          <>
             <Text style={styles.title}>Something other title text</Text>
             <Text style={styles.body}>
-              <Text fontSize='sm'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                do eiusmod tempor incididunt ut labore et dolore magna aliqua. </Text>
+              <Text fontSize="sm">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
+              </Text>
             </Text>
           </>
         }
@@ -56,7 +67,7 @@ const AboutUs = () => {
             <Text style={styles.title}>News</Text>
             <View style={styles.container}>
               <Text style={styles.boxOne}>
-                <Text style={styles.blackBox}>       </Text>
+                <Text style={styles.blackBox}> </Text>
                 Follow @BSE
               </Text>
             </View>
@@ -71,22 +82,6 @@ const AboutUs = () => {
           </>
         }
       />
-      <Card
-        children={
-          <>
-            <Circle />
-          </>
-        }
-      />
-      <NavCard height={"86%"} width={"46%"}>
-        <View style={styles.innerCard}>
-          <Image
-            style={styles.icon}
-            source={require("../assets/bse_logo_white.png")}
-          />
-          <Text style={styles.label}>R&D</Text>
-        </View>
-      </NavCard>
     </ScrollView>
   );
 };
@@ -95,7 +90,9 @@ const styles = StyleSheet.create({
   container: {
     margin: "2%",
     flex: 1,
-    flexDirection: 'row'
+  },
+  rowContainer: {
+    margin: "2%",
   },
   column: {
     flex: 1,
@@ -113,23 +110,20 @@ const styles = StyleSheet.create({
   },
   boxOne: {
     flex: 1,
-    flexDirection: 'row',
-    backgroundColor: '#1DA1F2',
-    width: '60%',
+    backgroundColor: "#1DA1F2",
+    width: "60%",
     padding: 10,
   },
   blackBox: {
     flex: 1,
-    flexDirection: 'row',
-    backgroundColor: 'white',
-    width: '5%',
+    backgroundColor: "white",
+    width: "5%",
   },
   bigBox: {
     flex: 1,
-    margin: '2%',
-    width: '40%',
-    height: '70%'
-
+    margin: "2%",
+    width: "40%",
+    height: "70%",
   },
   title: {
     fontSize: 18,
@@ -139,6 +133,12 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 2, height: 2 },
     shadowOpacity: 1,
     shadowRadius: 4,
+  },
+  smallCard: {
+    width: "30%",
+    padding: 15,
+    borderRadius: 15,
+    backgroundColor: "#333436",
   },
 });
 

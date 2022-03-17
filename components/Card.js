@@ -7,7 +7,6 @@ export const Card = ({ width = null, children = null }) => {
 
 const styles = StyleSheet.create({
   card: {
-    flexGrow: 1,
     width: "96%",
     margin: "2%",
     padding: 15,
