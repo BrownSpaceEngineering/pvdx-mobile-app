@@ -24,7 +24,7 @@ const EngageScreen = ({ navigation }) => {
           <View>
             <Text style={styles.title}>How to Join</Text>
             <Text style={styles.body}>
-              We have general meetings (almost) every Sunday in BH 166 at 1pm.
+              We have general meetings (almost) every Sunday in BH 161 at 1pm.
             </Text>
             <Text style={styles.body}>
               Feel free to email us at bse@brown.edu to learn more about joining

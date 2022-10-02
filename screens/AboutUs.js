@@ -39,22 +39,14 @@ const AboutUs = () => {
         }
       />
       <ScrollView style={styles.rowContainer} horizontal={true}>
-        <Card
-          children={
-            <>
-              <Text style={styles.title}>Avionics</Text>
-              <Text style={styles.body}>We do avionics stuff</Text>
-            </>
-          }
-        />
-        <Card
-          children={
-            <>
-              <Text style={styles.title}>Flight Software</Text>
-              <Text style={styles.body}>We do flight software stuff</Text>
-            </>
-          }
-        />
+        <View style={styles.smallCard}>
+          <Text style={styles.title}>Avionics</Text>
+          <Text style={styles.body}>We do avionics stuff</Text>
+        </View>
+        <View style={styles.smallCard}>
+          <Text style={styles.title}>Flight Software</Text>
+          <Text style={styles.body}>We do flight software stuff</Text>
+        </View>
       </ScrollView>
       <Card
         children={
@@ -100,7 +92,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   rowContainer: {
-    flexDirection: "row",
+    margin: "2%",
   },
   column: {
     flex: 1,
